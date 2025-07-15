@@ -1,10 +1,13 @@
 package io.github.alansilva.quarkussocial.rest.dto;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
 public class CreateUserRequest {
+    @NotNull(message = "Name is Required")
     private String name;
+    @NotNull(message = "Age is Required")
     private Integer age;
 
     public String getName() {

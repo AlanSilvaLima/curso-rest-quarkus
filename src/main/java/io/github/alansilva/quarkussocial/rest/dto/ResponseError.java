@@ -18,11 +18,11 @@ public class ResponseError {
     public  static final int UNPROCESSABLE_ENTITY_STATUS = 422;
 
     private String message;
-    private Collection<FieldError> error;
+    private Collection<FieldError> errors;
 
     public ResponseError(String message, Collection<FieldError> error) {
         this.message = message;
-        this.error = error;
+        this.errors = error;
     }
 
     public static <T> ResponseError createFromValidation(Set<ConstraintViolation<T>> violations) {
